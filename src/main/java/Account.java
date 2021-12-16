@@ -35,12 +35,12 @@ public class Account {
         }
     }
 
-    public void withdrawQuantity(double quantity){
-        double balance = calculateBalance(quantity, this.quantity);
+    public void withdrawQuantity(double withdrawnQuantity){
+        double balance = calculateBalance(withdrawnQuantity, getQuantity());
         if(balance>0){
-            this.quantity = balance;
+            setQuantity(balance);
         }else{
-            this.quantity = 0;
+            setQuantity(0);
         }
     }
 

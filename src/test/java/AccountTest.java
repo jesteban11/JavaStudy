@@ -34,4 +34,12 @@ class AccountTest extends TestCase {
         Account accountTest = new Account("Test 4",addedQuantity);
         Assertions.assertEquals(addedQuantity, (long) accountTest.getQuantity());
     }
+
+    @Test
+    public void test() {
+        Account accountTest = new Account("Test 5");
+        accountTest.quantity = 500;
+        accountTest.withdrawQuantity(100);
+        Assertions.assertEquals(400 , (long) accountTest.getQuantity());
+    }
 }
