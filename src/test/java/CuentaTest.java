@@ -9,7 +9,7 @@ class CuentaTest extends TestCase {
         Cuenta cuentaTest = new Cuenta("Test 1");
         cuentaTest.ingresar(500);
         cuentaTest.retirar(100);
-        assertEquals(expextedValue, cuentaTest.getCantidad());
+        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
     }
 
     @Test
@@ -18,7 +18,7 @@ class CuentaTest extends TestCase {
         Cuenta cuentaTest = new Cuenta("Test 2");
         cuentaTest.ingresar(100);
         cuentaTest.retirar(200);
-        assertEquals(expextedValue, cuentaTest.getCantidad());
+        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
     }
 
     @Test
@@ -26,6 +26,6 @@ class CuentaTest extends TestCase {
         double expextedValue = 0;
         Cuenta cuentaTest = new Cuenta("Test 3");
         cuentaTest.ingresar(-100);
-        assertEquals(expextedValue, cuentaTest.getCantidad());
+        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
     }
 }
