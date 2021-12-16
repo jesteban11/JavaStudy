@@ -1,8 +1,10 @@
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
-public class CuentaTest extends TestCase {
+class CuentaTest extends TestCase {
 
-    public void testIngresarMasDineroDelQueSeRetira() {
+    @Test
+    void testIngresarMasDineroDelQueSeRetira() {
         double expextedValue = 400;
         Cuenta cuentaTest = new Cuenta("Test 1");
         cuentaTest.ingresar(500);
@@ -10,7 +12,8 @@ public class CuentaTest extends TestCase {
         assertEquals(expextedValue, cuentaTest.getCantidad());
     }
 
-    public void testRetirarMasDineroDelQueSeIngresa() {
+    @Test
+    void testRetirarMasDineroDelQueSeIngresa() {
         double expextedValue = 0;
         Cuenta cuentaTest = new Cuenta("Test 2");
         cuentaTest.ingresar(100);
@@ -18,6 +21,7 @@ public class CuentaTest extends TestCase {
         assertEquals(expextedValue, cuentaTest.getCantidad());
     }
 
+    @Test
     public void testIngresarNegativoRetornarCero() {
         double expextedValue = 0;
         Cuenta cuentaTest = new Cuenta("Test 3");
