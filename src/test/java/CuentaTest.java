@@ -1,31 +1,37 @@
 import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class CuentaTest extends TestCase {
 
     @Test
-    void testIngresarMasDineroDelQueSeRetira() {
+    public void testIngresarMasDineroDelQueSeRetira() {
         double expextedValue = 400;
         Cuenta cuentaTest = new Cuenta("Test 1");
         cuentaTest.ingresar(500);
         cuentaTest.retirar(100);
-        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
+        Assertions.assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
     }
 
     @Test
-    void testRetirarMasDineroDelQueSeIngresa() {
-        double expextedValue = 0;
+    public void testRetirarMasDineroDelQueSeIngresa() {
         Cuenta cuentaTest = new Cuenta("Test 2");
         cuentaTest.ingresar(100);
         cuentaTest.retirar(200);
-        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
+        Assertions.assertEquals(0, (long) cuentaTest.getCantidad());
     }
 
     @Test
     public void testIngresarNegativoRetornarCero() {
-        double expextedValue = 0;
         Cuenta cuentaTest = new Cuenta("Test 3");
         cuentaTest.ingresar(-100);
-        assertEquals((long) expextedValue, (long) cuentaTest.getCantidad());
+        Assertions.assertEquals(0, (long) cuentaTest.getCantidad());
+    }
+
+    @Test
+    public void testValidarQueSePuedaCrearCuentaIngresandoCantidad() {
+        long cantidadIngresada = 500;
+        Cuenta cuentaTest = new Cuenta("Test 4",cantidadIngresada);
+        Assertions.assertEquals(cantidadIngresada, (long) cuentaTest.getCantidad());
     }
 }

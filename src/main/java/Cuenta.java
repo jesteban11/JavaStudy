@@ -7,6 +7,12 @@ public class Cuenta {
     public Cuenta(String titular) {
         this.titular = titular;
     }
+
+    public Cuenta(String titular, double cantidad) {
+        this.titular = titular;
+        ingresar(cantidad);
+    }
+
     public String getTitular() {
         return titular;
     }
