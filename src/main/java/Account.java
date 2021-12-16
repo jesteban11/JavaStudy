@@ -31,21 +31,20 @@ public class Account {
 
     public void addQuantity(double quantity){
         if(quantity>0){
-            this.quantity += quantity;
+            updateBalance(quantity);
         }
     }
 
     public void withdrawQuantity(double withdrawnQuantity){
-        double balance = calculateBalance(withdrawnQuantity, getQuantity());
-        if(balance>0){
-            setQuantity(balance);
+        if((quantity-withdrawnQuantity)>0){
+            updateBalance(withdrawnQuantity*-1);
         }else{
             setQuantity(0);
         }
     }
 
-    private double calculateBalance(double withdrawnQuantity, double currentQuantity){
-        return currentQuantity-withdrawnQuantity;
+    private void updateBalance(double quantityAddedOrWithdrawn){
+            quantity += quantityAddedOrWithdrawn;
     }
 
 }

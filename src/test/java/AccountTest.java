@@ -6,11 +6,11 @@ class AccountTest extends TestCase {
 
     @Test
     public void testAddMoreQuantityThanTheWithdrawnQuantity() {
-        double expextedValue = 400;
+        double expectedValue = 400;
         Account accountTest = new Account("Test 1");
         accountTest.addQuantity(500);
         accountTest.withdrawQuantity(100);
-        Assertions.assertEquals((long) expextedValue, (long) accountTest.getQuantity());
+        Assertions.assertEquals((long) expectedValue, (long) accountTest.getQuantity());
     }
 
     @Test
