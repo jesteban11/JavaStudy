@@ -1,0 +1,37 @@
+import junit.framework.TestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class AccountTest extends TestCase {
+
+    @Test
+    public void testAddMoreQuantityThanTheWithdrawnQuantity() {
+        double expextedValue = 400;
+        Account accountTest = new Account("Test 1");
+        accountTest.addQuantity(500);
+        accountTest.withdrawQuantity(100);
+        Assertions.assertEquals((long) expextedValue, (long) accountTest.getQuantity());
+    }
+
+    @Test
+    public void testWithdrawMoreQuantityThanTheAddedQuantity() {
+        Account accountTest = new Account("Test 2");
+        accountTest.addQuantity(100);
+        accountTest.withdrawQuantity(200);
+        Assertions.assertEquals(0, (long) accountTest.getQuantity());
+    }
+
+    @Test
+    public void testAddNegativeQuantityAndExpectedZero() {
+        Account accountTest = new Account("Test 3");
+        accountTest.addQuantity(-100);
+        Assertions.assertEquals(0, (long) accountTest.getQuantity());
+    }
+
+    @Test
+    public void testValidateAbilityToAddQuantityAtCreationOfAccount() {
+        long addedQuantity = 500;
+        Account accountTest = new Account("Test 4",addedQuantity);
+        Assertions.assertEquals(addedQuantity, (long) accountTest.getQuantity());
+    }
+}
