@@ -30,7 +30,7 @@ public class Cuenta {
     }
 
     public void retirar(double cantidad){
-        double saldo = getSaldo(cantidad, this.cantidad);
+        double saldo = calcularSaldo(cantidad, this.cantidad);
         if(saldo>0){
             this.cantidad = saldo;
         }else{
@@ -39,7 +39,7 @@ public class Cuenta {
 
     }
 
-    private double getSaldo(double cantidadRetirar, double cantidadActual){
+    private double calcularSaldo(double cantidadRetirar, double cantidadActual){
         return cantidadActual-cantidadRetirar;
     }
 
