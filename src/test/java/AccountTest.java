@@ -35,13 +35,6 @@ class AccountTest extends TestCase {
         Assertions.assertEquals(addedQuantity, (long) accountTest.getQuantity());
     }
 
-    @Test
-    public void testAddingDirectlyFromPublicVariables() {
-        Account accountTest = new Account("testAddingDirectlyFromPublicVariables");
-        accountTest.quantity = 500;
-        accountTest.withdrawQuantity(100);
-        Assertions.assertEquals(400 , (long) accountTest.getQuantity());
-    }
 
     @Test
     public void testWithDrawQuantityWithoutAdding() {

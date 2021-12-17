@@ -1,7 +1,7 @@
 public class Account {
 
-    String owner;
-    double quantity;
+    private String owner;
+    private double quantity;
 
 
     public Account(String owner) {
@@ -11,14 +11,6 @@ public class Account {
     public Account(String owner, double quantityAdded) {
         this.owner = owner;
         addQuantity(quantityAdded);
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
     }
 
     public double getQuantity() {
