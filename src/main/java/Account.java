@@ -36,7 +36,7 @@ public class Account {
     }
 
     public void withdrawQuantity(double withdrawnQuantity){
-        if((quantity-withdrawnQuantity)>0){
+        if((quantity-withdrawnQuantity)>0 && withdrawnQuantity>0){
             updateBalance(withdrawnQuantity*-1);
         }else{
             setQuantity(0);

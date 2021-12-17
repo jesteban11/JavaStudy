@@ -50,4 +50,11 @@ class AccountTest extends TestCase {
         Assertions.assertEquals(0 , (long) accountTest.getQuantity());
     }
 
+    @Test
+    public void testWithDrawNegativeQuantity() {
+        Account accountTest = new Account("Test 7");
+        accountTest.withdrawQuantity(-100);
+        Assertions.assertEquals(0 , (long) accountTest.getQuantity());
+    }
+
 }
