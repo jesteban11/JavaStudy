@@ -56,5 +56,4 @@ class AccountTest extends TestCase {
         accountTest.withdrawQuantity(-100);
         Assertions.assertEquals(0 , (long) accountTest.getQuantity());
     }
-
 }
