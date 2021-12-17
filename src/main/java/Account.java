@@ -3,7 +3,6 @@ public class Account {
     String owner;
     double quantity;
 
-
     public Account(String owner) {
         this.owner = owner;
     }
