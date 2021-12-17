@@ -15,17 +15,9 @@ public class Account {
     public String getOwner() {
         return owner;
     }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
+    
     public double getQuantity() {
         return quantity;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
     }
 
     public void addQuantity(double quantity){
